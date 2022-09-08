@@ -40,7 +40,7 @@ class AccountVC: UIViewController {
         }
         else{
             signIn()
-            Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: { _ in
+            Timer.scheduledTimer(withTimeInterval: 2, repeats: false, block: { _ in
                 self.authButton.isEnabled = true
             })
         }

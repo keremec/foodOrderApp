@@ -24,9 +24,13 @@ class ForgotVC: UIViewController {
     @IBAction func pressResetButton(_ sender: Any) {
         resetPasswordButton.isEnabled = false
         resetPasswordButton.setTitle("Mail Gönderildi", for: .disabled)
+        mailInput.isUserInteractionEnabled = false
         Auth.auth().sendPasswordReset(withEmail: mailInput.text!) { error in
             print(error?.localizedDescription ?? "success")
         }
+        Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: { _ in
+            self.dismiss(animated: true)
+        })
     }
     
     
