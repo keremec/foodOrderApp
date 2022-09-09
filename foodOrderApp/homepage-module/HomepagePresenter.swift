@@ -12,9 +12,20 @@ class HomepagePresenter:VtoP_HomepageProtocol{
     
     var homepageView: PtoV_HomepageProtocol?
     
+    
+    func doloadHero() {
+        homepageInteractor?.loadHero()
+    }
+    
+    func doLoadCategory() {
+        homepageInteractor?.loadCategory()
+    }
+
+    
     func doLoadFood() {
         homepageInteractor?.loadFood()
     }
+    
     
     func doSearchFood(searchString: String) {
         homepageInteractor?.searchFood(searchString: searchString)
@@ -28,8 +39,18 @@ class HomepagePresenter:VtoP_HomepageProtocol{
 }
 
 extension HomepagePresenter: ItoP_HomepageProtocol{
+    func heroSendtoPresenter(herolist: Array<Heros>) {
+        let list = herolist
+        homepageView?.heroSendtoView(herolist: list)
+    }
+    
+    func categorySendtoPresenter(categorylist: Array<Categories>) {
+        let list = categorylist
+        homepageView?.categorySendtoView(categorylist: list)
+    }
+    
     func dataSendtoPresenter(foodList: Array<Foods>) {
-        var list = foodList
+        let list = foodList
         homepageView?.dataSendtoView(foodList: list)
     }
     
