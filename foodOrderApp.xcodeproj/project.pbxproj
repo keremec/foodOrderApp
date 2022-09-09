@@ -27,6 +27,8 @@
 		0C95CEF228CA5CF000A2A8A8 /* SignupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C95CEF128CA5CF000A2A8A8 /* SignupRouter.swift */; };
 		0C95CEF728CA7D1D00A2A8A8 /* ForgotVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C95CEF628CA7D1D00A2A8A8 /* ForgotVC.swift */; };
 		0C96F65F28CBA395001139EC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C96F65E28CBA395001139EC /* Extensions.swift */; };
+		0C96F66228CBA941001139EC /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C96F66128CBA941001139EC /* Notes.swift */; };
+		0C96F66428CBA98C001139EC /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C96F66328CBA98B001139EC /* NoteTableViewCell.swift */; };
 		0CAA2C1828C749A9009F596A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAA2C1728C749A9009F596A /* AppDelegate.swift */; };
 		0CAA2C1A28C749A9009F596A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAA2C1928C749A9009F596A /* SceneDelegate.swift */; };
 		0CAA2C1C28C749A9009F596A /* HomepageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAA2C1B28C749A9009F596A /* HomepageVC.swift */; };
@@ -62,6 +64,8 @@
 		0C95CEF128CA5CF000A2A8A8 /* SignupRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupRouter.swift; sourceTree = "<group>"; };
 		0C95CEF628CA7D1D00A2A8A8 /* ForgotVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotVC.swift; sourceTree = "<group>"; };
 		0C96F65E28CBA395001139EC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		0C96F66128CBA941001139EC /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
+		0C96F66328CBA98B001139EC /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
 		0CAA2C1428C749A9009F596A /* foodOrderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodOrderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CAA2C1728C749A9009F596A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CAA2C1928C749A9009F596A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 			children = (
 				0C68B4D328CB72EA00A0DCCF /* HeroViewCell */,
 				0C68B4D228CB72D800A0DCCF /* CategoryViewCell */,
+				0C96F66028CBA8C2001139EC /* NoteTableViewCell */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -165,6 +170,15 @@
 				0C96F65E28CBA395001139EC /* Extensions.swift */,
 			);
 			path = extension;
+			sourceTree = "<group>";
+		};
+		0C96F66028CBA8C2001139EC /* NoteTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				0C96F66128CBA941001139EC /* Notes.swift */,
+				0C96F66328CBA98B001139EC /* NoteTableViewCell.swift */,
+			);
+			path = NoteTableViewCell;
 			sourceTree = "<group>";
 		};
 		0CAA2C0B28C749A9009F596A = {
@@ -328,10 +342,12 @@
 				0C95CEF228CA5CF000A2A8A8 /* SignupRouter.swift in Sources */,
 				0CAA2C1A28C749A9009F596A /* SceneDelegate.swift in Sources */,
 				0C95CEE628CA5CA200A2A8A8 /* LoginPresenter.swift in Sources */,
+				0C96F66228CBA941001139EC /* Notes.swift in Sources */,
 				0C95CEF028CA5CE500A2A8A8 /* SignupProtocol.swift in Sources */,
 				0C68B4DC28CB842E00A0DCCF /* HeroCollectionViewCell.swift in Sources */,
 				0C68B4CA28CB544700A0DCCF /* HomepageRouter.swift in Sources */,
 				0C68B4D828CB747E00A0DCCF /* CategoryCollectionViewCell.swift in Sources */,
+				0C96F66428CBA98C001139EC /* NoteTableViewCell.swift in Sources */,
 				0C95CEE428CA5C8800A2A8A8 /* LoginProtocol.swift in Sources */,
 				0C68B4D628CB743C00A0DCCF /* Categories.swift in Sources */,
 				0C95CEF728CA7D1D00A2A8A8 /* ForgotVC.swift in Sources */,

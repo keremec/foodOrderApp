@@ -17,7 +17,7 @@ protocol VtoP_HomepageProtocol{
     
     func doloadHero()
     func doLoadCategory()
-    func doLoadFood()
+    func doLoadNote()
     func doSearchFood(searchString:String)
     func doAddFood(food_id:Int,value:Bool)
 }
@@ -28,7 +28,7 @@ protocol PtoI_HomepageProtocol{
     
     func loadHero()
     func loadCategory()
-    func loadFood()
+    func loadNote()
     func searchFood(searchString:String)
     func addFood(food_id:Int,value:Bool)
 }
@@ -38,16 +38,16 @@ protocol PtoI_HomepageProtocol{
 // MARK: Transport Protocols
 
 protocol ItoP_HomepageProtocol{
-    func dataSendtoPresenter(foodList:Array<Foods>)
+    func noteSendtoPresenter(noteList:Array<Notes>)
     func heroSendtoPresenter(herolist:Array<Heros>)
     func categorySendtoPresenter(categorylist:Array<Categories>)
     
 }
 
 protocol PtoV_HomepageProtocol{
-    func dataSendtoView(foodList:Array<Foods>)
     func heroSendtoView(herolist:Array<Heros>)
     func categorySendtoView(categorylist:Array<Categories>)
+    func noteSendtoView(noteList:Array<Notes>)
 }
 
 

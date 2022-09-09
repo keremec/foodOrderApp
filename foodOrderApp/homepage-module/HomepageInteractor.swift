@@ -46,7 +46,17 @@ class HomepageInteractor:PtoI_HomepageProtocol{
     }
     
     
-    func loadFood() {
+    func loadNote() {
+        var noteList = [Notes]()
+        let n = Notes(note_id: 1, note_title: "Lorem", note_detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit", note_price: "₺25.90", note_status: true)
+        
+        noteList.append(n)
+        noteList.append(n)
+        noteList.append(n)
+        noteList.append(n)
+        
+        homepagePresenter?.noteSendtoPresenter(noteList: noteList)
+        
 
     }
     

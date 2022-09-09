@@ -19,8 +19,11 @@ class HomepageVC: UIViewController {
     
     @IBOutlet weak var CategoryCollectionView: UICollectionView!
     
+    @IBOutlet weak var NotesTableView: UITableView!
+    
     var HeroList = [Heros]()
     var CategoryList = [Categories]()
+    var NoteList = [Notes]()
     
     //MARK: - Lifecycle Functions
     
@@ -34,6 +37,9 @@ class HomepageVC: UIViewController {
         
         CategoryCollectionView.delegate = self
         CategoryCollectionView.dataSource = self
+        
+        NotesTableView.delegate = self
+        NotesTableView.dataSource = self
         
         
         //MARK: Styles
@@ -63,7 +69,7 @@ class HomepageVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         homepagePresenterObject?.doloadHero()
         homepagePresenterObject?.doLoadCategory()
-        //Anasayfaya dönüldüğünde veriler yüklenmiş oluacak
+        homepagePresenterObject?.doLoadNote()
     }
 
 }
@@ -85,7 +91,13 @@ extension HomepageVC:PtoV_HomepageProtocol{
         }
     }
     
-    func dataSendtoView(foodList: Array<Foods>) {
+    func noteSendtoView(noteList: Array<Notes>) {
+        self.NoteList = noteList
+        DispatchQueue.main.async {
+            print(noteList)
+            self.NotesTableView.reloadData()
+        }
+        
     }
 }
 
@@ -137,3 +149,28 @@ extension HomepageVC : UICollectionViewDelegate, UICollectionViewDataSource{
     
 }
 
+
+//MARK: - Filling Cells
+
+extension HomepageVC: UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return NoteList.count
+    }
+    
+    //MARK: Adding Cells
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let note = NoteList[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "noteCell", for: indexPath) as! NoteTableViewCell
+        
+        cell.noteLabel.text = note.note_title
+        cell.noteDetail.text = note.note_detail
+        cell.notePrice.text = note.note_price
+        cell.noteImage.image = UIImage(named: "placeholder")
+
+ 
+        return cell
+        
+    }
+
+}

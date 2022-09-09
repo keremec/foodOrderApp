@@ -22,8 +22,8 @@ class HomepagePresenter:VtoP_HomepageProtocol{
     }
 
     
-    func doLoadFood() {
-        homepageInteractor?.loadFood()
+    func doLoadNote() {
+        homepageInteractor?.loadNote()
     }
     
     
@@ -49,9 +49,9 @@ extension HomepagePresenter: ItoP_HomepageProtocol{
         homepageView?.categorySendtoView(categorylist: list)
     }
     
-    func dataSendtoPresenter(foodList: Array<Foods>) {
-        let list = foodList
-        homepageView?.dataSendtoView(foodList: list)
+    func noteSendtoPresenter(noteList: Array<Notes>) {
+        let list = noteList
+        homepageView?.noteSendtoView(noteList: list)
     }
     
     
