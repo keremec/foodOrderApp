@@ -125,17 +125,9 @@
 		0CAA2C3228C76CD3009F596A /* chatpage-module */ = {
 			isa = PBXGroup;
 			children = (
-				0CAA2C3328C76CE9009F596A /* view */,
-			);
-			path = "chatpage-module";
-			sourceTree = "<group>";
-		};
-		0CAA2C3328C76CE9009F596A /* view */ = {
-			isa = PBXGroup;
-			children = (
 				0CAA2C3428C76D1D009F596A /* ChatpageVC.swift */,
 			);
-			path = view;
+			path = "chatpage-module";
 			sourceTree = "<group>";
 		};
 		0CBC5E0728CA49EE0017BBA9 /* account-module */ = {
