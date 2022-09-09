@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C56E68E28CA595200186415 /* AccountPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E68D28CA595200186415 /* AccountPresenter.swift */; };
-		0C56E69028CA596400186415 /* AccountInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E68F28CA596400186415 /* AccountInteractor.swift */; };
-		0C56E69228CA597B00186415 /* AccountProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E69128CA597B00186415 /* AccountProtocol.swift */; };
-		0C56E69428CA598900186415 /* AccountRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E69328CA598900186415 /* AccountRouter.swift */; };
 		0C95CEE428CA5C8800A2A8A8 /* LoginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C95CEE328CA5C8800A2A8A8 /* LoginProtocol.swift */; };
 		0C95CEE628CA5CA200A2A8A8 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C95CEE528CA5CA200A2A8A8 /* LoginPresenter.swift */; };
 		0C95CEE828CA5CAC00A2A8A8 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C95CEE728CA5CAC00A2A8A8 /* LoginInteractor.swift */; };
@@ -36,10 +32,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0C56E68D28CA595200186415 /* AccountPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPresenter.swift; sourceTree = "<group>"; };
-		0C56E68F28CA596400186415 /* AccountInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInteractor.swift; sourceTree = "<group>"; };
-		0C56E69128CA597B00186415 /* AccountProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountProtocol.swift; sourceTree = "<group>"; };
-		0C56E69328CA598900186415 /* AccountRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRouter.swift; sourceTree = "<group>"; };
 		0C95CEE328CA5C8800A2A8A8 /* LoginProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocol.swift; sourceTree = "<group>"; };
 		0C95CEE528CA5CA200A2A8A8 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		0C95CEE728CA5CAC00A2A8A8 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
@@ -150,13 +142,9 @@
 			isa = PBXGroup;
 			children = (
 				0CBC5E0E28CA4AD30017BBA9 /* AccountVC.swift */,
-				0C56E68D28CA595200186415 /* AccountPresenter.swift */,
-				0C56E68F28CA596400186415 /* AccountInteractor.swift */,
-				0C56E69128CA597B00186415 /* AccountProtocol.swift */,
-				0C56E69328CA598900186415 /* AccountRouter.swift */,
-				0C95CEF328CA7CEB00A2A8A8 /* Forgot */,
-				0C56E69528CA5BAD00186415 /* Signup */,
 				0CBC5E0828CA4A030017BBA9 /* Login */,
+				0C56E69528CA5BAD00186415 /* Signup */,
+				0C95CEF328CA7CEB00A2A8A8 /* Forgot */,
 			);
 			path = "account-module";
 			sourceTree = "<group>";
@@ -256,22 +244,18 @@
 				0CAA2C1C28C749A9009F596A /* ViewController.swift in Sources */,
 				0C95CEE828CA5CAC00A2A8A8 /* LoginInteractor.swift in Sources */,
 				0CAA2C3528C76D1D009F596A /* ChatpageVC.swift in Sources */,
-				0C56E69228CA597B00186415 /* AccountProtocol.swift in Sources */,
 				0CBC5E0F28CA4AD30017BBA9 /* AccountVC.swift in Sources */,
 				0CAA2C1828C749A9009F596A /* AppDelegate.swift in Sources */,
-				0C56E69428CA598900186415 /* AccountRouter.swift in Sources */,
 				0C95CEEA28CA5CB500A2A8A8 /* LoginRouter.swift in Sources */,
 				0C95CEF228CA5CF000A2A8A8 /* SignupRouter.swift in Sources */,
 				0CAA2C1A28C749A9009F596A /* SceneDelegate.swift in Sources */,
 				0C95CEE628CA5CA200A2A8A8 /* LoginPresenter.swift in Sources */,
 				0C95CEF028CA5CE500A2A8A8 /* SignupProtocol.swift in Sources */,
-				0C56E68E28CA595200186415 /* AccountPresenter.swift in Sources */,
 				0C95CEE428CA5C8800A2A8A8 /* LoginProtocol.swift in Sources */,
 				0C95CEF728CA7D1D00A2A8A8 /* ForgotVC.swift in Sources */,
 				0CBC5E0B28CA4A700017BBA9 /* LoginVC.swift in Sources */,
 				0C95CEEC28CA5CCF00A2A8A8 /* SignupPresenter.swift in Sources */,
 				0C95CEEE28CA5CDB00A2A8A8 /* SignupInteractor.swift in Sources */,
-				0C56E69028CA596400186415 /* AccountInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

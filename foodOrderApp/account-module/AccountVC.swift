@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseAuth
 
 class AccountVC: UIViewController {
@@ -24,12 +25,19 @@ class AccountVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let status = (Auth.auth().currentUser != nil) ? true : false
-        loadUser(status: status)
-
-        // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        handle = Auth.auth().addStateDidChangeListener { auth, user in
+            let user = Auth.auth().currentUser
+            let status = ( user != nil) ? true : false
+            self.loadUser(status: status, user: user)
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        Auth.auth().removeStateDidChangeListener(handle!)
+    }
     
     
     @IBAction func authButton(_ sender: Any) {
@@ -45,30 +53,13 @@ class AccountVC: UIViewController {
             })
         }
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        handle = Auth.auth().addStateDidChangeListener { auth, user in
-            let status = (Auth.auth().currentUser != nil) ? true : false
-            self.loadUser(status: status)
-        }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        Auth.auth().removeStateDidChangeListener(handle!)
-    }
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    }
 
 }
 
 
 extension AccountVC{
     
-    func loadUser(status:Bool){
+    func loadUser(status:Bool, user:User?){
         addressButton.isEnabled = status
         ordersButton.isEnabled = status
         walletButton.isEnabled = status
@@ -76,6 +67,8 @@ extension AccountVC{
         
         let titleActive = status ? "Çıkış Yap" : "Giriş Yap"
         let titleDisabled = status ? "Çıkış Yapılıyor" : "Giriş Yapılıyor"
+        nameLabel.text = user?.displayName ?? "Merhaba"
+        mailLabel.text = user?.email ?? "Üye olabilir veya giriş yapabilirsiniz"
         authButton.configuration = status ? .gray() : .filled()
         authButton.setTitle(titleActive, for: .normal)
         authButton.setTitle(titleDisabled, for: .disabled)
