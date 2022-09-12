@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class HomepagePresenter:VtoP_HomepageProtocol{
     var homepageInteractor: PtoI_HomepageProtocol?
@@ -26,6 +27,9 @@ class HomepagePresenter:VtoP_HomepageProtocol{
         homepageInteractor?.loadNote()
     }
     
+    func doLoadNoteImage(noteImageString: String) {
+        homepageInteractor?.loadNoteImage(noteImageString: noteImageString)
+    }
     
     func doSearchFood(searchString: String) {
         homepageInteractor?.searchFood(searchString: searchString)
@@ -52,6 +56,10 @@ extension HomepagePresenter: ItoP_HomepageProtocol{
     func noteSendtoPresenter(noteList: Array<Notes>) {
         let list = noteList
         homepageView?.noteSendtoView(noteList: list)
+    }
+    
+    func noteImageSendtoPresenter(image: UIImage) {
+        homepageView?.noteImageSendtoView(image: image)
     }
     
     

@@ -6,7 +6,8 @@
 //
 
 import UIKit
-
+import Alamofire
+import SwiftUI
 
 //MARK: - ViewController
 
@@ -14,6 +15,9 @@ class HomepageVC: UIViewController {
     
     //MARK: - Declarations
     var homepagePresenterObject:VtoP_HomepageProtocol?
+    
+    
+    @IBOutlet weak var scrollViewHome: UIScrollView!
     
     @IBOutlet weak var HeroCollectionView: UICollectionView!
     
@@ -40,6 +44,7 @@ class HomepageVC: UIViewController {
         
         NotesTableView.delegate = self
         NotesTableView.dataSource = self
+        scrollViewHome.delegate = self
         
         
         //MARK: Styles
@@ -71,7 +76,24 @@ class HomepageVC: UIViewController {
         homepagePresenterObject?.doLoadCategory()
         homepagePresenterObject?.doLoadNote()
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "toDetail":
+            if let note = sender as? Notes{
+                let goalVC = segue.destination as! NoteDetailView
+                goalVC.delegateDetail = self
+                goalVC.note = note
+            }
+        default:
+            print("identifier not found")
+        }
+    }
+    
+    @IBAction func toUpButton(_ sender: Any) {
+        scrollViewHome.setContentOffset(.zero, animated: true)
+        NotesTableView.setContentOffset(.zero, animated: true)
+    }
 }
 
 //MARK: - Presenter Calls
@@ -93,11 +115,14 @@ extension HomepageVC:PtoV_HomepageProtocol{
     
     func noteSendtoView(noteList: Array<Notes>) {
         self.NoteList = noteList
+        
         DispatchQueue.main.async {
-            print(noteList)
             self.NotesTableView.reloadData()
         }
         
+    }
+    
+    func noteImageSendtoView(image: UIImage){
     }
 }
 
@@ -143,14 +168,14 @@ extension HomepageVC : UICollectionViewDelegate, UICollectionViewDataSource{
             
         default:
             return UICollectionViewCell()
-
+            
         }
     }
     
 }
 
 
-//MARK: - Filling Cells
+//MARK: - Filling Tableview
 
 extension HomepageVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -163,14 +188,66 @@ extension HomepageVC: UITableViewDelegate, UITableViewDataSource{
         let note = NoteList[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "noteCell", for: indexPath) as! NoteTableViewCell
         
+        AF.request("http://kasimadalan.pe.hu/yemekler/resimler/" + note.note_image! ,method: .get).response { data in
+            cell.noteImage.image = UIImage(data: data.data!, scale:1)
+        }
+        
         cell.noteLabel.text = note.note_title
         cell.noteDetail.text = note.note_detail
-        cell.notePrice.text = note.note_price
-        cell.noteImage.image = UIImage(named: "placeholder")
-
- 
+        cell.notePrice.text = "₺" + note.note_price!.cleanValue
+        
+        
         return cell
         
     }
+    
+    //MARK: Adding Cell Click Action
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let note = self.NoteList[indexPath.row]
+        performSegue(withIdentifier: "toDetail", sender: note)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+}
 
+//MARK: - Scroll Behaviour
+
+extension HomepageVC{
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        
+        if (NotesTableView.contentOffset.y <= 0){
+            scrollViewHome.isScrollEnabled = true
+        }
+        
+        if (scrollViewHome.contentOffset.y <= 0){
+            scrollViewHome.bounces = true
+            NotesTableView.setContentOffset(.zero, animated: false)
+        }
+        
+        
+        if (NotesTableView.contentOffset.y >= (NotesTableView.contentSize.height - NotesTableView.frame.size.height)) {
+            scrollViewHome.isScrollEnabled = true
+            scrollViewHome.bounces = true
+        
+        }
+        
+        if (scrollViewHome.contentOffset.y >= (scrollViewHome.contentSize.height - scrollViewHome.frame.size.height)) {
+            NotesTableView.isScrollEnabled = true
+        }
+        
+        
+        if (NotesTableView.contentOffset.y > 0 && NotesTableView.contentOffset.y < (NotesTableView.contentSize.height - scrollViewHome.frame.size.height)){
+            scrollViewHome.isScrollEnabled = false
+            
+           
+        }
+        if (scrollViewHome.contentOffset.y > 0 && scrollViewHome.contentOffset.y < (scrollViewHome.contentSize.height - scrollViewHome.frame.size.height)){
+            NotesTableView.isScrollEnabled = false
+            scrollViewHome.bounces = false
+        }
+        
+    }
 }

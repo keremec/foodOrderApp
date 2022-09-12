@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 
@@ -18,6 +19,7 @@ protocol VtoP_HomepageProtocol{
     func doloadHero()
     func doLoadCategory()
     func doLoadNote()
+    func doLoadNoteImage(noteImageString: String)
     func doSearchFood(searchString:String)
     func doAddFood(food_id:Int,value:Bool)
 }
@@ -29,6 +31,7 @@ protocol PtoI_HomepageProtocol{
     func loadHero()
     func loadCategory()
     func loadNote()
+    func loadNoteImage(noteImageString: String)
     func searchFood(searchString:String)
     func addFood(food_id:Int,value:Bool)
 }
@@ -41,6 +44,7 @@ protocol ItoP_HomepageProtocol{
     func noteSendtoPresenter(noteList:Array<Notes>)
     func heroSendtoPresenter(herolist:Array<Heros>)
     func categorySendtoPresenter(categorylist:Array<Categories>)
+    func noteImageSendtoPresenter(image:UIImage)
     
 }
 
@@ -48,6 +52,7 @@ protocol PtoV_HomepageProtocol{
     func heroSendtoView(herolist:Array<Heros>)
     func categorySendtoView(categorylist:Array<Categories>)
     func noteSendtoView(noteList:Array<Notes>)
+    func noteImageSendtoView(image:UIImage)
 }
 
 
