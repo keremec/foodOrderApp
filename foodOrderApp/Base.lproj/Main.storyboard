@@ -855,7 +855,7 @@
                                                 </cells>
                                             </collectionView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fCw-05-3zh">
-                                                <rect key="frame" x="0.0" y="456" width="414" height="584"/>
+                                                <rect key="frame" x="0.0" y="456" width="414" height="589"/>
                                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="noteCell" rowHeight="150" id="6Jt-o8-AmC" customClass="NoteTableViewCell" customModule="foodOrderApp" customModuleProvider="target">
@@ -915,8 +915,8 @@
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CuT-Ca-3LC">
-                                                <rect key="frame" x="122" y="1055" width="170" height="50"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CuT-Ca-3LC">
+                                                <rect key="frame" x="122" y="1065" width="170" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="5JN-6A-sKt"/>
                                                 </constraints>
@@ -933,14 +933,14 @@
                                         <constraints>
                                             <constraint firstItem="Eng-LY-wEj" firstAttribute="leading" secondItem="ytT-93-aYU" secondAttribute="leading" constant="20" id="8vs-z1-yMD"/>
                                             <constraint firstItem="bFc-Fs-fo6" firstAttribute="top" secondItem="37W-Ao-Uky" secondAttribute="bottom" constant="30" id="9rL-UC-Jd9"/>
-                                            <constraint firstItem="CuT-Ca-3LC" firstAttribute="top" secondItem="fCw-05-3zh" secondAttribute="bottom" constant="15" id="Edo-CR-2wd"/>
+                                            <constraint firstItem="CuT-Ca-3LC" firstAttribute="top" secondItem="fCw-05-3zh" secondAttribute="bottom" constant="20" id="Edo-CR-2wd"/>
                                             <constraint firstItem="t3Y-SY-3jB" firstAttribute="top" secondItem="ytT-93-aYU" secondAttribute="top" constant="10" id="H7Q-iL-NZu"/>
                                             <constraint firstItem="37W-Ao-Uky" firstAttribute="leading" secondItem="ytT-93-aYU" secondAttribute="leading" id="NWb-aV-MYg"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1090" id="Q1c-eU-vYj"/>
                                             <constraint firstItem="37W-Ao-Uky" firstAttribute="top" secondItem="Eng-LY-wEj" secondAttribute="bottom" constant="15" id="Q77-EM-Ovu"/>
                                             <constraint firstAttribute="trailing" secondItem="t3Y-SY-3jB" secondAttribute="trailing" id="XQ3-NS-Hed"/>
                                             <constraint firstItem="bFc-Fs-fo6" firstAttribute="leading" secondItem="ytT-93-aYU" secondAttribute="leading" constant="20" id="adi-yl-fVc"/>
-                                            <constraint firstAttribute="bottom" secondItem="CuT-Ca-3LC" secondAttribute="bottom" constant="-5" id="b3j-cg-YQS"/>
+                                            <constraint firstAttribute="bottom" secondItem="CuT-Ca-3LC" secondAttribute="bottom" constant="-15" id="b3j-cg-YQS"/>
                                             <constraint firstItem="t3Y-SY-3jB" firstAttribute="leading" secondItem="ytT-93-aYU" secondAttribute="leading" id="bCR-FW-LVz"/>
                                             <constraint firstAttribute="trailing" secondItem="fCw-05-3zh" secondAttribute="trailing" id="cWK-Ya-6YE"/>
                                             <constraint firstAttribute="height" constant="1100" id="eTT-Kx-DVf"/>
