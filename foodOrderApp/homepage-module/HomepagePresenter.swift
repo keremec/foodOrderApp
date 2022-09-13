@@ -35,8 +35,8 @@ class HomepagePresenter:VtoP_HomepageProtocol{
         homepageInteractor?.searchFood(searchString: searchString)
     }
     
-    func doAddFood(food_id:Int,value:Bool) {
-        homepageInteractor?.addFood(food_id: food_id, value: value)
+    func doAddNote(note:NoteReq) {
+        homepageInteractor?.addNote(note: note)
     }
     
     

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C0C1D2528D0A77A00250280 /* NoteDetailProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0C1D2428D0A77A00250280 /* NoteDetailProtocol.swift */; };
+		0C0C1D2728D0A78800250280 /* NoteDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0C1D2628D0A78800250280 /* NoteDetailInteractor.swift */; };
+		0C0C1D2928D0A79200250280 /* NoteDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0C1D2828D0A79200250280 /* NoteDetailPresenter.swift */; };
+		0C0C1D2B28D0A79C00250280 /* NoteDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0C1D2A28D0A79C00250280 /* NoteDetailRouter.swift */; };
 		0C4FF08828CFB8B90005C1DD /* NoteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4FF08728CFB8B80005C1DD /* NoteDetailView.swift */; };
 		0C4FF08C28CFC6FD0005C1DD /* NoteReq.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4FF08B28CFC6FD0005C1DD /* NoteReq.swift */; };
 		0C68B4C328CB506900A0DCCF /* HomepageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C68B4C228CB506900A0DCCF /* HomepageProtocol.swift */; };
@@ -48,6 +52,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C0C1D2428D0A77A00250280 /* NoteDetailProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailProtocol.swift; sourceTree = "<group>"; };
+		0C0C1D2628D0A78800250280 /* NoteDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailInteractor.swift; sourceTree = "<group>"; };
+		0C0C1D2828D0A79200250280 /* NoteDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailPresenter.swift; sourceTree = "<group>"; };
+		0C0C1D2A28D0A79C00250280 /* NoteDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailRouter.swift; sourceTree = "<group>"; };
 		0C4FF08728CFB8B80005C1DD /* NoteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailView.swift; sourceTree = "<group>"; };
 		0C4FF08B28CFC6FD0005C1DD /* NoteReq.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteReq.swift; sourceTree = "<group>"; };
 		0C68B4C228CB506900A0DCCF /* HomepageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageProtocol.swift; sourceTree = "<group>"; };
@@ -104,8 +112,12 @@
 		0C4FF08628CFB8940005C1DD /* NoteDetailView */ = {
 			isa = PBXGroup;
 			children = (
-				0C4FF08728CFB8B80005C1DD /* NoteDetailView.swift */,
 				0C4FF08B28CFC6FD0005C1DD /* NoteReq.swift */,
+				0C0C1D2428D0A77A00250280 /* NoteDetailProtocol.swift */,
+				0C0C1D2628D0A78800250280 /* NoteDetailInteractor.swift */,
+				0C0C1D2828D0A79200250280 /* NoteDetailPresenter.swift */,
+				0C4FF08728CFB8B80005C1DD /* NoteDetailView.swift */,
+				0C0C1D2A28D0A79C00250280 /* NoteDetailRouter.swift */,
 			);
 			path = NoteDetailView;
 			sourceTree = "<group>";
@@ -359,6 +371,8 @@
 				0C95CEEA28CA5CB500A2A8A8 /* LoginRouter.swift in Sources */,
 				0C95CEF228CA5CF000A2A8A8 /* SignupRouter.swift in Sources */,
 				0CAA2C1A28C749A9009F596A /* SceneDelegate.swift in Sources */,
+				0C0C1D2528D0A77A00250280 /* NoteDetailProtocol.swift in Sources */,
+				0C0C1D2B28D0A79C00250280 /* NoteDetailRouter.swift in Sources */,
 				0C95CEE628CA5CA200A2A8A8 /* LoginPresenter.swift in Sources */,
 				0C96F66228CBA941001139EC /* Notes.swift in Sources */,
 				0C95CEF028CA5CE500A2A8A8 /* SignupProtocol.swift in Sources */,
@@ -369,9 +383,11 @@
 				0C4FF08C28CFC6FD0005C1DD /* NoteReq.swift in Sources */,
 				0C95CEE428CA5C8800A2A8A8 /* LoginProtocol.swift in Sources */,
 				0C68B4D628CB743C00A0DCCF /* Categories.swift in Sources */,
+				0C0C1D2728D0A78800250280 /* NoteDetailInteractor.swift in Sources */,
 				0C95CEF728CA7D1D00A2A8A8 /* ForgotVC.swift in Sources */,
 				0C96F65F28CBA395001139EC /* Extensions.swift in Sources */,
 				0CBC5E0B28CA4A700017BBA9 /* LoginVC.swift in Sources */,
+				0C0C1D2928D0A79200250280 /* NoteDetailPresenter.swift in Sources */,
 				0CE7E0A428CF6F0900D29CD3 /* NoteResponse.swift in Sources */,
 				0C95CEEC28CA5CCF00A2A8A8 /* SignupPresenter.swift in Sources */,
 				0C95CEEE28CA5CDB00A2A8A8 /* SignupInteractor.swift in Sources */,

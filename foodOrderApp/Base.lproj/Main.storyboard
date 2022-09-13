@@ -563,7 +563,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XTh-8u-KE8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2678" y="1590"/>
+            <point key="canvasLocation" x="-2923" y="1601"/>
         </scene>
         <!--Note Detail View-->
         <scene sceneID="G3I-FS-T84">
@@ -693,11 +693,12 @@
                         <outlet property="labelOutlet" destination="DUa-15-wRT" id="fed-Cq-SXz"/>
                         <outlet property="priceOutlet" destination="j4T-7B-avE" id="eyi-uc-vuR"/>
                         <outlet property="stepperOutlet" destination="DxH-i2-XYe" id="lc4-Ub-eGx"/>
+                        <segue destination="FpG-Ob-ehh" kind="presentation" identifier="carttoLogin" id="D8A-KY-kD2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jT6-kl-fvB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2678.2608695652175" y="766.74107142857144"/>
+            <point key="canvasLocation" x="-1162" y="1438"/>
         </scene>
         <!--Menü-->
         <scene sceneID="1pa-DV-Rdd">
@@ -826,15 +827,19 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="218" height="121"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jN6-Zo-JIp">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="218" height="121"/>
-                                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
-                                                                    <buttonConfiguration key="configuration" style="plain" imagePadding="10"/>
-                                                                </button>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qq7-9b-aXL">
                                                                     <rect key="frame" x="0.0" y="0.0" width="218" height="121"/>
+                                                                    <color key="backgroundColor" name="categoryColor"/>
                                                                     <color key="tintColor" systemColor="labelColor"/>
                                                                 </imageView>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="bottom" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jN6-Zo-JIp">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="218" height="121"/>
+                                                                    <color key="tintColor" systemColor="labelColor"/>
+                                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                                    <buttonConfiguration key="configuration" style="plain" title="" subtitle="Burger">
+                                                                        <directionalEdgeInsets key="contentInsets" top="0.0" leading="5" bottom="2" trailing="0.0"/>
+                                                                    </buttonConfiguration>
+                                                                </button>
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstAttribute="trailing" secondItem="jN6-Zo-JIp" secondAttribute="trailing" id="32D-UQ-78k"/>
@@ -849,6 +854,7 @@
                                                         </collectionViewCellContentView>
                                                         <size key="customSize" width="218" height="121"/>
                                                         <connections>
+                                                            <outlet property="buttonOutlet" destination="jN6-Zo-JIp" id="1zj-Ta-Of9"/>
                                                             <outlet property="imageSpec" destination="Qq7-9b-aXL" id="OuN-DZ-wuL"/>
                                                         </connections>
                                                     </collectionViewCell>
@@ -921,7 +927,7 @@
                                                     <constraint firstAttribute="height" constant="50" id="5JN-6A-sKt"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Yukarı Dön">
+                                                <buttonConfiguration key="configuration" style="filled" image="arrow.down" catalog="system" imagePlacement="bottom" title="Yukarı Dön" subtitle="Hızlıca Aşağı Kaydır" imagePadding="5" titlePadding="35" titleAlignment="automatic">
                                                     <color key="baseBackgroundColor" name="chenRed"/>
                                                 </buttonConfiguration>
                                                 <connections>
@@ -990,7 +996,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xfd-ku-nDJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1875.3623188405797" y="1106.9196428571429"/>
+            <point key="canvasLocation" x="-1939" y="1107"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hdI-47-4ZY">
@@ -1030,8 +1036,12 @@
             <point key="canvasLocation" x="-1055" y="-163"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="D8A-KY-kD2"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" name="chenRed2"/>
     <resources>
+        <image name="arrow.down" catalog="system" width="120" height="128"/>
         <image name="bag" catalog="system" width="128" height="128"/>
         <image name="bell" catalog="system" width="128" height="124"/>
         <image name="brandlogoround" width="2048" height="2048"/>
@@ -1046,6 +1056,9 @@
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="person.text.rectangle" catalog="system" width="128" height="93"/>
+        <namedColor name="categoryColor">
+            <color red="0.87450980392156863" green="0.87450980392156863" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="chenRed">
             <color red="0.63921568627450975" green="0.050980392156862744" blue="0.12941176470588237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

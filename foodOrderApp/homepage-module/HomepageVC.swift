@@ -161,6 +161,7 @@ extension HomepageVC : UICollectionViewDelegate, UICollectionViewDataSource{
             let category = CategoryList[indexPath.row]
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCell", for: indexPath) as! CategoryCollectionViewCell
             cell.imageSpec.image = UIImage(named: category.CategoryImgName!)
+            cell.buttonOutlet.configuration?.subtitle = category.CategoryTitle
             
             cell.layer.cornerRadius = 5.0
             cell.backgroundColor = UIColor(hex: category.CategoryColor!)

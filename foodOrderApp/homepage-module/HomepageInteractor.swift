@@ -15,12 +15,12 @@ class HomepageInteractor:PtoI_HomepageProtocol{
     
     func loadHero() {
         var HeroList = [Heros]()
-        let tombraiderDesc = "Become the Tomb Raider"
         
-        let h1 = Heros(heroId: 1, heroTitle: "Shadow of the Tomb Raider", heroDesc: tombraiderDesc, heroImgName: "placeholderhero")
+        let h1 = Heros(heroId: 1, heroTitle: "lorem", heroDesc: "lorem", heroImgName: "promotion far")
+        let h2 = Heros(heroId: 1, heroTitle: "lorem", heroDesc: "lorem", heroImgName: "promo2")
         
         HeroList.append(h1)
-        HeroList.append(h1)
+        HeroList.append(h2)
         homepagePresenter?.heroSendtoPresenter(herolist: HeroList)
         
     }
@@ -28,15 +28,19 @@ class HomepageInteractor:PtoI_HomepageProtocol{
     
     func loadCategory() {
         var CategoryList = [Categories]()
-        let catName1 = "Hamburger"
         
-        let cat1 = Categories(CategoryId: 1, CategoryTitle: catName1,CategoryColor: "#008745ff", CategoryImgName: "placeholdercategory")
-        
+        let cat1 = Categories(CategoryId: 1, CategoryTitle: "Burger",CategoryColor: "#008745ff", CategoryImgName: "burger")
+        let cat2 = Categories(CategoryId: 1, CategoryTitle: "Pizza",CategoryColor: "#008745ff", CategoryImgName: "pizza")
+        let cat3 = Categories(CategoryId: 3, CategoryTitle: "Tatlı",CategoryColor: "#008745ff", CategoryImgName: "tatli")
+        let cat4 = Categories(CategoryId: 4, CategoryTitle: "İçecek",CategoryColor: "#008745ff", CategoryImgName: "icecek")
+        let cat5 = Categories(CategoryId: 5, CategoryTitle: "Kebap",CategoryColor: "#008745ff", CategoryImgName: "kebap")
+        let cat6 = Categories(CategoryId: 6, CategoryTitle: "Dünya",CategoryColor: "#008745ff", CategoryImgName: "dunya")
         CategoryList.append(cat1)
-        CategoryList.append(cat1)
-        CategoryList.append(cat1)
-        CategoryList.append(cat1)
-        CategoryList.append(cat1)
+        CategoryList.append(cat2)
+        CategoryList.append(cat3)
+        CategoryList.append(cat4)
+        CategoryList.append(cat5)
+        CategoryList.append(cat6)
         homepagePresenter?.categorySendtoPresenter(categorylist: CategoryList)
         
     }
@@ -90,7 +94,8 @@ class HomepageInteractor:PtoI_HomepageProtocol{
     }
     
     
-    func addFood(food_id: Int,value:Bool) {
-        
+    func addNote(note:NoteReq) {
+        print(note.yemek_fiyat)
+        print(note.kullanici_adi)
     }
 }

@@ -12,9 +12,11 @@ import Alamofire
 class NoteDetailView: UIViewController {
     
     weak var delegateDetail:HomepageVC?
+    var noteDetailPresenterObject:VtoP_NoteDetailProtocol?
     
     var note:Notes?
     var price:Double?
+    var user:String?
     
     @IBOutlet weak var imageOutlet: UIImageView!
     @IBOutlet weak var boldLabelOutlet: UILabel!
@@ -24,9 +26,13 @@ class NoteDetailView: UIViewController {
     @IBOutlet weak var counterOutlet: UIButton!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         
-        let yemek = NoteReq(yemek_adi: note?.note_title, yemek_resim_adi: note?.note_image, yemek_fiyat: Int((note?.note_price)!), yemek_siparis_adet: 1, kullanici_adi: Auth.auth().currentUser?.uid)
+        user = Auth.auth().currentUser?.uid
+        
+        super.viewDidLoad()
+        NoteDetailRouter.createModule(ref: self)
+        
+        let yemek = NoteReq(yemek_adi: note?.note_title, yemek_resim_adi: note?.note_image, yemek_fiyat: Int((note?.note_price)!), yemek_siparis_adet: 1, kullanici_adi: user ?? nil)
         
         AF.request("http://kasimadalan.pe.hu/yemekler/resimler/" + yemek.yemek_resim_adi! ,method: .get).response { data in
             self.imageOutlet.image = UIImage(data: data.data!, scale:1)
@@ -46,5 +52,17 @@ class NoteDetailView: UIViewController {
     }
     
     @IBAction func addCartAction(_ sender: Any) {
+        
+        user = Auth.auth().currentUser?.uid
+
+        if(user == nil){
+            performSegue(withIdentifier: "carttoLogin", sender: nil)
+        }
+        else{
+        let yemek = NoteReq(yemek_adi: note?.note_title, yemek_resim_adi: note?.note_image, yemek_fiyat: Int((note?.note_price)!), yemek_siparis_adet: Int(stepperOutlet.value), kullanici_adi: user)
+            noteDetailPresenterObject?.doAddNote(note: yemek)
+            dismiss(animated: true)
+        }
+        
     }
 }
