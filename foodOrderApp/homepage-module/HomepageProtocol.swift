@@ -21,7 +21,6 @@ protocol VtoP_HomepageProtocol{
     func doLoadNote()
     func doLoadNoteImage(noteImageString: String)
     func doSearchFood(searchString:String)
-    func doAddNote(note:NoteReq)
 }
 
 protocol PtoI_HomepageProtocol{
@@ -33,7 +32,6 @@ protocol PtoI_HomepageProtocol{
     func loadNote()
     func loadNoteImage(noteImageString: String)
     func searchFood(searchString:String)
-    func addNote(note:NoteReq)
 }
 
 

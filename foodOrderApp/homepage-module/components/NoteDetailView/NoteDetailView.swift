@@ -9,8 +9,11 @@ import UIKit
 import FirebaseAuth
 import Alamofire
 
+//MARK: - ViewController
+
 class NoteDetailView: UIViewController {
     
+    //MARK: - Declarations
     weak var delegateDetail:HomepageVC?
     var noteDetailPresenterObject:VtoP_NoteDetailProtocol?
     
@@ -24,6 +27,8 @@ class NoteDetailView: UIViewController {
     @IBOutlet weak var stepperOutlet: UIStepper!
     @IBOutlet weak var priceOutlet: UILabel!
     @IBOutlet weak var counterOutlet: UIButton!
+    
+    //MARK: - Lifecycle Functions
     
     override func viewDidLoad() {
         
@@ -44,6 +49,8 @@ class NoteDetailView: UIViewController {
         price = Double(yemek.yemek_fiyat!)
         priceOutlet.text = ("₺" + price!.cleanValue)
     }
+    
+    //MARK: - Widget Actions
     
     @IBAction func stepperAction(_ sender: Any) {
         let sumPrice = Double(round(100 * (price! * stepperOutlet.value))/100)

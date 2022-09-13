@@ -35,10 +35,6 @@ class HomepagePresenter:VtoP_HomepageProtocol{
         homepageInteractor?.searchFood(searchString: searchString)
     }
     
-    func doAddNote(note:NoteReq) {
-        homepageInteractor?.addNote(note: note)
-    }
-    
     
 }
 
@@ -50,6 +46,7 @@ extension HomepagePresenter: ItoP_HomepageProtocol{
     
     func categorySendtoPresenter(categorylist: Array<Categories>) {
         let list = categorylist
+        print(list.count)
         homepageView?.categorySendtoView(categorylist: list)
     }
     

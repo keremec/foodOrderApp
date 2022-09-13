@@ -46,6 +46,10 @@ class HomepageVC: UIViewController {
         NotesTableView.dataSource = self
         scrollViewHome.delegate = self
         
+        homepagePresenterObject?.doloadHero()
+        homepagePresenterObject?.doLoadCategory()
+        homepagePresenterObject?.doLoadNote()
+        
         
         //MARK: Styles
         
@@ -72,9 +76,6 @@ class HomepageVC: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        homepagePresenterObject?.doloadHero()
-        homepagePresenterObject?.doLoadCategory()
-        homepagePresenterObject?.doLoadNote()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -89,6 +90,8 @@ class HomepageVC: UIViewController {
             print("identifier not found")
         }
     }
+    
+    //MARK: - Widget Actions
     
     @IBAction func toUpButton(_ sender: Any) {
         scrollViewHome.setContentOffset(.zero, animated: true)
@@ -146,6 +149,7 @@ extension HomepageVC : UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch collectionView{
+            
         case HeroCollectionView:
             let hero = HeroList[indexPath.row]
             
@@ -160,7 +164,9 @@ extension HomepageVC : UICollectionViewDelegate, UICollectionViewDataSource{
         case CategoryCollectionView:
             let category = CategoryList[indexPath.row]
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCell", for: indexPath) as! CategoryCollectionViewCell
-            cell.imageSpec.image = UIImage(named: category.CategoryImgName!)
+            
+            cell.imageSpec.image = category.CategoryImgage
+            
             cell.buttonOutlet.configuration?.subtitle = category.CategoryTitle
             
             cell.layer.cornerRadius = 5.0

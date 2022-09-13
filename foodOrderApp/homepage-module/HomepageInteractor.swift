@@ -8,6 +8,7 @@
 import UIKit
 import Foundation
 import Alamofire
+import Firebase
 
 class HomepageInteractor:PtoI_HomepageProtocol{
     
@@ -27,21 +28,36 @@ class HomepageInteractor:PtoI_HomepageProtocol{
     
     
     func loadCategory() {
-        var CategoryList = [Categories]()
-        
-        let cat1 = Categories(CategoryId: 1, CategoryTitle: "Burger",CategoryColor: "#008745ff", CategoryImgName: "burger")
-        let cat2 = Categories(CategoryId: 1, CategoryTitle: "Pizza",CategoryColor: "#008745ff", CategoryImgName: "pizza")
-        let cat3 = Categories(CategoryId: 3, CategoryTitle: "Tatlı",CategoryColor: "#008745ff", CategoryImgName: "tatli")
-        let cat4 = Categories(CategoryId: 4, CategoryTitle: "İçecek",CategoryColor: "#008745ff", CategoryImgName: "icecek")
-        let cat5 = Categories(CategoryId: 5, CategoryTitle: "Kebap",CategoryColor: "#008745ff", CategoryImgName: "kebap")
-        let cat6 = Categories(CategoryId: 6, CategoryTitle: "Dünya",CategoryColor: "#008745ff", CategoryImgName: "dunya")
-        CategoryList.append(cat1)
-        CategoryList.append(cat2)
-        CategoryList.append(cat3)
-        CategoryList.append(cat4)
-        CategoryList.append(cat5)
-        CategoryList.append(cat6)
-        homepagePresenter?.categorySendtoPresenter(categorylist: CategoryList)
+        let refCategory = Database.database().reference().child("home/category")
+
+        refCategory.observe(.value, with: { snapshot in
+            var list = [Categories]()
+            var CategoryImage:UIImage?
+
+            if let dataRec = snapshot.value as? [String:AnyObject]{
+                print(dataRec)
+                for i in dataRec{
+                    if let d = i.value as? NSDictionary{
+                        let CategoryId = i.key
+                        let CategoryTitle = d["name"] as? String ?? ""
+                        let CategoryColor = "#DEDEDE"
+                        let CategoryImgName = d["url"] as? String ?? ""
+                        print("link:")
+                        print(CategoryImgName)
+                        AF.request(CategoryImgName ,method: .get).response { data in
+                            CategoryImage = UIImage(data: data.data!, scale:1)
+                            let cat = Categories(CategoryId: Int(CategoryId) ?? -1 , CategoryTitle: CategoryTitle, CategoryColor: CategoryColor, CategoryImage: CategoryImage!)
+                            if(cat.CategoryId != -1){
+                                list.append(cat)
+                                self.homepagePresenter?.categorySendtoPresenter(categorylist: list)
+                            }
+                        }
+                        
+                    }
+                }
+            }
+            
+        })
         
     }
     
@@ -56,7 +72,6 @@ class HomepageInteractor:PtoI_HomepageProtocol{
                     if let list = response.yemekler {
                         for i in list{
                             let n = Notes(note_id: Int(i.yemekID!)!, note_title: i.yemekAdi!, note_detail: "Ağzınıza layık", note_image: i.yemekResimAdi!, note_price: Double(i.yemekFiyat!)!, note_status: true)
-                            print(noteList.count)
                             noteList.append(n)
                         }
                     }
@@ -93,9 +108,5 @@ class HomepageInteractor:PtoI_HomepageProtocol{
         
     }
     
-    
-    func addNote(note:NoteReq) {
-        print(note.yemek_fiyat)
-        print(note.kullanici_adi)
-    }
+
 }
