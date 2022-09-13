@@ -715,20 +715,12 @@
                                     <constraint firstAttribute="height" constant="50" id="ZYk-VK-wFj"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOŞ GELDİNİZ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPH-tc-BFr">
-                                <rect key="frame" x="101.5" y="429" width="211.5" height="38.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hun-BQ-yST"/>
                         <color key="backgroundColor" name="chenRed"/>
                         <constraints>
-                            <constraint firstItem="gPH-tc-BFr" firstAttribute="centerX" secondItem="NyA-ns-OMs" secondAttribute="centerX" id="07F-UI-TVf"/>
                             <constraint firstItem="zL4-ob-1W2" firstAttribute="centerX" secondItem="NyA-ns-OMs" secondAttribute="centerX" id="gFs-Qa-WNk"/>
                             <constraint firstItem="zL4-ob-1W2" firstAttribute="bottom" secondItem="hun-BQ-yST" secondAttribute="bottom" constant="-10" id="nTF-uJ-uff"/>
-                            <constraint firstItem="gPH-tc-BFr" firstAttribute="centerY" secondItem="NyA-ns-OMs" secondAttribute="centerY" id="weS-IS-Ebm"/>
                         </constraints>
                     </view>
                 </viewController>

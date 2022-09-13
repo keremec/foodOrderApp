@@ -6,13 +6,21 @@
 //
 
 import UIKit
+import Lottie
 
 class SplashScreenVC: UIViewController {
 
+    @IBOutlet weak var imageOutlet: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let animationView = AnimationView(name: "95073-frying-pan")
+            animationView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+            animationView.center = self.view.center
+            animationView.contentMode = .scaleAspectFit
+            
+            view.addSubview(animationView)
+        
+            animationView.play()
     }
     
     override func viewDidAppear(_ animated: Bool) {
