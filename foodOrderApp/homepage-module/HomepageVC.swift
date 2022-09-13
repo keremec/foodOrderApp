@@ -28,6 +28,7 @@ class HomepageVC: UIViewController {
     var HeroList = [Heros]()
     var CategoryList = [Categories]()
     var NoteList = [Notes]()
+    var welcome = true
     
     //MARK: - Lifecycle Functions
     
@@ -76,6 +77,13 @@ class HomepageVC: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if(welcome){
+        performSegue(withIdentifier: "toWelcome", sender: nil)
+            welcome = false
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -155,7 +163,7 @@ extension HomepageVC : UICollectionViewDelegate, UICollectionViewDataSource{
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "heroCell", for: indexPath) as! HeroCollectionViewCell
             
-            cell.heroImage.image = UIImage(named: hero.heroImgName!)
+            cell.heroImage.image = hero.heroImg
             
             cell.layer.cornerRadius = 10.0
             
@@ -194,10 +202,8 @@ extension HomepageVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let note = NoteList[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "noteCell", for: indexPath) as! NoteTableViewCell
-        
-        AF.request("http://kasimadalan.pe.hu/yemekler/resimler/" + note.note_image! ,method: .get).response { data in
-            cell.noteImage.image = UIImage(data: data.data!, scale:1)
-        }
+
+        cell.noteImage.image = note.note_image
         
         cell.noteLabel.text = note.note_title
         cell.noteDetail.text = note.note_detail

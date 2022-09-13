@@ -45,6 +45,7 @@
 		0CAA2C2F28C765BF009F596A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0CAA2C2E28C765BF009F596A /* FirebaseAuth */; };
 		0CAA2C3128C765BF009F596A /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 0CAA2C3028C765BF009F596A /* FirebaseDatabase */; };
 		0CAA2C3528C76D1D009F596A /* ChatpageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAA2C3428C76D1D009F596A /* ChatpageVC.swift */; };
+		0CAA7E0428D1036200CA979C /* SplashScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAA7E0328D1036200CA979C /* SplashScreenVC.swift */; };
 		0CBC5E0B28CA4A700017BBA9 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBC5E0A28CA4A700017BBA9 /* LoginVC.swift */; };
 		0CBC5E0D28CA4A860017BBA9 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBC5E0C28CA4A860017BBA9 /* SignupVC.swift */; };
 		0CBC5E0F28CA4AD30017BBA9 /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBC5E0E28CA4AD30017BBA9 /* AccountVC.swift */; };
@@ -89,6 +90,7 @@
 		0CAA2C2528C749A9009F596A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CAA2C2B28C764CF009F596A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0CAA2C3428C76D1D009F596A /* ChatpageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatpageVC.swift; sourceTree = "<group>"; };
+		0CAA7E0328D1036200CA979C /* SplashScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenVC.swift; sourceTree = "<group>"; };
 		0CBC5E0A28CA4A700017BBA9 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		0CBC5E0C28CA4A860017BBA9 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		0CBC5E0E28CA4AD30017BBA9 /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 		0C68B4D128CB72BD00A0DCCF /* components */ = {
 			isa = PBXGroup;
 			children = (
+				0CAA7E0228D1034900CA979C /* SplashScreenView */,
 				0C4FF08628CFB8940005C1DD /* NoteDetailView */,
 				0C68B4D328CB72EA00A0DCCF /* HeroViewCell */,
 				0C68B4D228CB72D800A0DCCF /* CategoryViewCell */,
@@ -251,6 +254,14 @@
 				0CAA2C3428C76D1D009F596A /* ChatpageVC.swift */,
 			);
 			path = "chatpage-module";
+			sourceTree = "<group>";
+		};
+		0CAA7E0228D1034900CA979C /* SplashScreenView */ = {
+			isa = PBXGroup;
+			children = (
+				0CAA7E0328D1036200CA979C /* SplashScreenVC.swift */,
+			);
+			path = SplashScreenView;
 			sourceTree = "<group>";
 		};
 		0CBC5E0728CA49EE0017BBA9 /* account-module */ = {
@@ -360,6 +371,7 @@
 				0C4FF08828CFB8B90005C1DD /* NoteDetailView.swift in Sources */,
 				0CBC5E0D28CA4A860017BBA9 /* SignupVC.swift in Sources */,
 				0CAA2C1C28C749A9009F596A /* HomepageVC.swift in Sources */,
+				0CAA7E0428D1036200CA979C /* SplashScreenVC.swift in Sources */,
 				0C68B4C528CB507E00A0DCCF /* HomepageInteractor.swift in Sources */,
 				0C68B4CD28CB551600A0DCCF /* Foods.swift in Sources */,
 				0C68B4C328CB506900A0DCCF /* HomepageProtocol.swift in Sources */,

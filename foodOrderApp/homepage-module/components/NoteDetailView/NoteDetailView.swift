@@ -37,7 +37,7 @@ class NoteDetailView: UIViewController {
         super.viewDidLoad()
         NoteDetailRouter.createModule(ref: self)
         
-        let yemek = NoteReq(yemek_adi: note?.note_title, yemek_resim_adi: note?.note_image, yemek_fiyat: Int((note?.note_price)!), yemek_siparis_adet: 1, kullanici_adi: user ?? nil)
+        let yemek = NoteReq(yemek_adi: note?.note_title, yemek_resim_adi: note?.note_image_name, yemek_fiyat: Int((note?.note_price)!), yemek_siparis_adet: 1, kullanici_adi: user ?? nil)
         
         AF.request("http://kasimadalan.pe.hu/yemekler/resimler/" + yemek.yemek_resim_adi! ,method: .get).response { data in
             self.imageOutlet.image = UIImage(data: data.data!, scale:1)
@@ -66,7 +66,7 @@ class NoteDetailView: UIViewController {
             performSegue(withIdentifier: "carttoLogin", sender: nil)
         }
         else{
-        let yemek = NoteReq(yemek_adi: note?.note_title, yemek_resim_adi: note?.note_image, yemek_fiyat: Int((note?.note_price)!), yemek_siparis_adet: Int(stepperOutlet.value), kullanici_adi: user)
+            let yemek = NoteReq(yemek_adi: note?.note_title, yemek_resim_adi: note?.note_image_name, yemek_fiyat: Int((note?.note_price)!), yemek_siparis_adet: Int(stepperOutlet.value), kullanici_adi: user)
             noteDetailPresenterObject?.doAddNote(note: yemek)
             dismiss(animated: true)
         }

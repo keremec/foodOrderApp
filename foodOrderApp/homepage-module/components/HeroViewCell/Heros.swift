@@ -6,19 +6,20 @@
 //
 
 import Foundation
+import UIKit
 
 class Heros{
     
-    init(heroId: Int, heroTitle: String, heroDesc: String, heroImgName: String) {
+    init(heroId: Int, heroTitle: String, heroDesc: String, heroImg: UIImage) {
         self.heroId = heroId
         self.heroTitle = heroTitle
         self.heroDesc = heroDesc
-        self.heroImgName = heroImgName
+        self.heroImg = heroImg
     }
     
     
     var heroId:Int?
     var heroTitle:String?
     var heroDesc:String?
-    var heroImgName:String?
+    var heroImg:UIImage?
 }
