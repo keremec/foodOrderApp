@@ -27,6 +27,7 @@ class NoteDetailView: UIViewController {
     @IBOutlet weak var stepperOutlet: UIStepper!
     @IBOutlet weak var priceOutlet: UILabel!
     @IBOutlet weak var counterOutlet: UIButton!
+    @IBOutlet weak var addCartOutlet: UIButton!
     
     //MARK: - Lifecycle Functions
     
@@ -63,12 +64,17 @@ class NoteDetailView: UIViewController {
         user = Auth.auth().currentUser?.uid
 
         if(user == nil){
-            performSegue(withIdentifier: "carttoLogin", sender: nil)
+            performSegue(withIdentifier: "Detail2Login", sender: nil)
         }
         else{
+            addCartOutlet.isEnabled = false
+            counterOutlet.isEnabled = false
             let yemek = NoteReq(yemek_adi: note?.note_title, yemek_resim_adi: note?.note_image_name, yemek_fiyat: Int((note?.note_price)!), yemek_siparis_adet: Int(stepperOutlet.value), kullanici_adi: user)
             noteDetailPresenterObject?.doAddNote(note: yemek)
-            dismiss(animated: true)
+            Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { _ in
+                _ = self.delegateDetail?.tabBarController?.selectedIndex = 1
+                self.dismiss(animated: true)
+            })
         }
         
     }

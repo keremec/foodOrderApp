@@ -16,7 +16,6 @@ class HomepageVC: UIViewController {
     //MARK: - Declarations
     var homepagePresenterObject:VtoP_HomepageProtocol?
     
-    
     @IBOutlet weak var scrollViewHome: UIScrollView!
     
     @IBOutlet weak var HeroCollectionView: UICollectionView!
