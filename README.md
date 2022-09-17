@@ -101,7 +101,7 @@ Linkedin: https://www.linkedin.com/in/kerem-safa-dirican/
 
 <div align="center"> 
 
-<img width="2405" alt="master" src="https://user-images.githubusercontent.com/50713500/190861723-c0000125-e214-48d5-92f7-916482f97bc7.png">
+<img width="2405" alt="master" src="https://user-images.githubusercontent.com/50713500/190876687-b3cb3725-8ee7-47fc-9ae0-f6006d3a07fb.png">
 </div>
 
 <!-- Demo -->
