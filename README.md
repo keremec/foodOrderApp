@@ -83,6 +83,7 @@ Projede kullanılan paketler aşağıdadır.
     <li>* [ ] Hesap Ayarları</li>
     <li>* [ ] Sipariş Listesi</li>
     <li>* [ ] Adres Defteri</li>
+    <li>* [ ] Bildirimler</li>
   </ul>
 </details>
 
