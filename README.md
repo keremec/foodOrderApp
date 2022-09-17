@@ -83,6 +83,7 @@ Projede kullanılan paketler aşağıdadır.
     <li>* [ ] Hesap Ayarları</li>
     <li>* [ ] Sipariş Listesi</li>
     <li>* [ ] Adres Defteri</li>
+    <li>* [ ] Bildirimler</li>
   </ul>
 </details>
 
@@ -97,5 +98,6 @@ Linkedin: https://www.linkedin.com/in/kerem-safa-dirican/
 ## :gem: Ekran Görüntüleri ve Video
 
 <div align="center"> 
-  <img src="https://placehold.co/600x400?text=Your+Screenshot+here" alt="screenshot" />
+
+https://user-images.githubusercontent.com/50713500/190860802-ee18a015-cd03-4450-aa36-feaaffb3c2cb.mov
 </div>
