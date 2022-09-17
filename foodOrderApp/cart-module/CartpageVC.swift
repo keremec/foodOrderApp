@@ -141,6 +141,7 @@ extension CartpageVC:PtoV_CartpageProtocol{
                 self.showCartEmpty()
             }
             else{
+                tabItem.badgeValue = String(count)
                 self.showCartNotEmpty()
             }
         }
