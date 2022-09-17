@@ -24,7 +24,7 @@ Uygulamada VIPER pattern kullanılmıştır. iOS için, UIKit ile yapılmıştı
 
 
 <!-- Prerequisites -->
-### :bangbang: Gereksinimler
+### :package: Paketler
 
 Projede kullanılan paketler aşağıdadır.
 
@@ -87,15 +87,25 @@ Projede kullanılan paketler aşağıdadır.
   </ul>
 </details>
 
+
 <!-- Contact -->
-## :handshake: İletişim
+## :raising_hand_man: İletişim
 
 Kerem Safa Dirican
 
 Linkedin: https://www.linkedin.com/in/kerem-safa-dirican/
 
+
 <!-- Demo -->
-## :gem: Ekran Görüntüleri ve Video
+## :iphone: Ekran Görüntüleri
+
+<div align="center"> 
+
+<img width="2405" alt="master" src="https://user-images.githubusercontent.com/50713500/190861723-c0000125-e214-48d5-92f7-916482f97bc7.png">
+</div>
+
+<!-- Demo -->
+## :gem: Video
 
 <div align="center"> 
 
