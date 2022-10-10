@@ -8,6 +8,8 @@
     Techcareer.net Techmasters IOS Bootcamp bitirme ödevi için hazırladığım bir yemek sipariş uygulaması.
   </p>
 
+    API KEY SON GEÇERLİLİK TARİHİ: 24 KASIM 2022
+  
 </div>
 
 <br />
